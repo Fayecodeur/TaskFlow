@@ -9,7 +9,7 @@ export default function Header() {
           <h1>TaskFlow</h1>
           <div className="">
             <code className="color-gray">
-              Eliminer le choas, suiver le flux.
+              Éliminez le chaos, suivez le flux. ⚡
             </code>
           </div>
         </div>
