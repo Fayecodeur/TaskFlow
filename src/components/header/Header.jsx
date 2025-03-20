@@ -1,4 +1,4 @@
-import taskLogo from "../../assets/task_logo.png";
+import taskLogo from "/task_logo.png";
 import styles from "./header.module.css";
 export default function Header() {
   return (
