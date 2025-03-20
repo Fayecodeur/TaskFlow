@@ -28,7 +28,7 @@ export default function TaskInput({ addTask }) {
           value={title}
           type="text"
           className={styles.input}
-          placeholder="Indique un titre de tâche explicite"
+          placeholder="Note ta prochaine action"
         />
         <button
           type="submit"
