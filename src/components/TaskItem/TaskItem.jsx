@@ -1,12 +1,40 @@
 import styles from "./taskItem.module.css";
-export default function TaskItem() {
+import { FaTrashAlt } from "react-icons/fa";
+
+export default function TaskItem({ task, editTask, deleteTask }) {
   return (
-    <li className={`${styles.container} ${styles.default}`}>
+    <li
+      onClick={() => editTask(task.id, !task.completed)}
+      className={`${styles.container} ${
+        task?.completed ? styles.success : styles.default
+      }`}
+    >
       <div className={styles.item}>
-        <div className={`${styles.id} ${styles.idDefault}`}>1</div>
-        <div className={styles.contentDefault}>Finir le travail</div>
+        <div
+          className={`${styles.id} ${
+            task?.completed ? styles.idSuccess : styles.idDefault
+          }`}
+        >
+          {task.id}
+        </div>
+        <div
+          className={
+            task?.completed ? styles.contentSuccess : styles.contentDefault
+          }
+        >
+          {task.title}
+        </div>
       </div>
-      <button className="button-primary">x</button>
+      <button
+        onClick={(e) => {
+          e.stopPropagation(); // Empêche la propagation de l'événement
+          deleteTask(task.id);
+        }}
+        className="button-primary"
+        style={{ outline: "none" }}
+      >
+        <FaTrashAlt />
+      </button>
     </li>
   );
 }
