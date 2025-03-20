@@ -11,10 +11,16 @@ export default function TaskList({
     return (
       <div className="box">
         <h2 className={styles.title}>
-          {uncompletedTask > 0
-            ? `Il te reste ${uncompletedTask} tâches 🗂️`
-            : "Bravo, tu as tout terminé ! 🎉"}
+          {uncompletedTask > 0 ? (
+            <>
+              Il te reste <span className="important">{uncompletedTask}</span>{" "}
+              tâches 🗂️
+            </>
+          ) : (
+            "Bravo, tu as tout terminé ! 🎉"
+          )}
         </h2>
+
         <ul className={styles.container}>
           {taskList.map((task) => (
             <TaskItem
